@@ -1,0 +1,817 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8550E740-D84A-4DD3-A10B-7B78AC0A639B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Swap</RootNamespace>
+    <AssemblyName>Swap</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>2e60f17765008ff4e6195fda4daa7c08.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscordRPC, Version=1.0.175.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiscordRichPresence.1.0.175\lib\net35\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\Deobfu\packages\Guna.UI2.WinForms.2.0.1.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.UI">
+      <HintPath>..\..\..\..\Documents\Nora Swapper V2.5\Nora Swapper V2.0.5\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backblings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backblings.Designer.cs">
+      <DependentUpon>Backblings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="data\user.cs" />
+    <Compile Include="Emotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Emotes.Designer.cs">
+      <DependentUpon>Emotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmoteWarning.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmoteWarning.Designer.cs">
+      <DependentUpon>EmoteWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="News.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="News.Designer.cs">
+      <DependentUpon>News.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewsF\AnimeSkyTrees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewsF\AnimeSkyTrees.Designer.cs">
+      <DependentUpon>AnimeSkyTrees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\blindinglights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\blindinglights.Designer.cs">
+      <DependentUpon>blindinglights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\buildup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\buildup.Designer.cs">
+      <DependentUpon>buildup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\chickenwingit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\chickenwingit.Designer.cs">
+      <DependentUpon>chickenwingit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\Jitterbug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\Jitterbug.Designer.cs">
+      <DependentUpon>Jitterbug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\My World.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\My World.Designer.cs">
+      <DependentUpon>My World.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\RocketRide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\RocketRide.Designer.cs">
+      <DependentUpon>RocketRide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\TakeTheL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\TakeTheL.Designer.cs">
+      <DependentUpon>TakeTheL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\vibin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\vibin.Designer.cs">
+      <DependentUpon>vibin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\Wavy-tToFloss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Emotes\Wavy-tToFloss.Designer.cs">
+      <DependentUpon>Wavy-tToFloss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\BlackShield.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\BlackShield.Designer.cs">
+      <DependentUpon>BlackShield.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\Crowbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\Crowbar.Designer.cs">
+      <DependentUpon>Crowbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\oathandsorrowtodaredevilbillyclub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\oathandsorrowtodaredevilbillyclub.Designer.cs">
+      <DependentUpon>oathandsorrowtodaredevilbillyclub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\OGDefaultPick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\OGDefaultPick.Designer.cs">
+      <DependentUpon>OGDefaultPick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\raidersrevenge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\raidersrevenge.Designer.cs">
+      <DependentUpon>raidersrevenge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\starwand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\starwand.Designer.cs">
+      <DependentUpon>starwand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\Frozen Axe To Galaxy Reaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\Frozen Axe To Galaxy Reaper.Designer.cs">
+      <DependentUpon>Frozen Axe To Galaxy Reaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\MintyToCandy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\MintyToCandy.Designer.cs">
+      <DependentUpon>MintyToCandy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\streetshine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\streetshine.Designer.cs">
+      <DependentUpon>streetshine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\WindowsBite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Pick\WindowsBite.Designer.cs">
+      <DependentUpon>WindowsBite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\DerbyDominator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\DerbyDominator.Designer.cs">
+      <DependentUpon>DerbyDominator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Nitrojerry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Nitrojerry.Designer.cs">
+      <DependentUpon>Nitrojerry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RenegadeRaidr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RenegadeRaidr.Designer.cs">
+      <DependentUpon>RenegadeRaidr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\AssaultToSparkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\AssaultToSparkle.Designer.cs">
+      <DependentUpon>AssaultToSparkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Beastboy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Beastboy.Designer.cs">
+      <DependentUpon>Beastboy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\BMWC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\BMWC.Designer.cs">
+      <DependentUpon>BMWC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Chicken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Chicken.Designer.cs">
+      <DependentUpon>Chicken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Chun-li.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Chun-li.Designer.cs">
+      <DependentUpon>Chun-li.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\ClarkKent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\ClarkKent.Designer.cs">
+      <DependentUpon>ClarkKent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\ClarkKentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\ClarkKentV2.Designer.cs">
+      <DependentUpon>ClarkKentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\DarkBomberToBirthDayRam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\DarkBomberToBirthDayRam.Designer.cs">
+      <DependentUpon>DarkBomberToBirthDayRam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\EliteAg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\EliteAg.Designer.cs">
+      <DependentUpon>EliteAg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\galaxywildcat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\galaxywildcat.Designer.cs">
+      <DependentUpon>galaxywildcat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\isabelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\isabelle.Designer.cs">
+      <DependentUpon>isabelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Kyra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Kyra.Designer.cs">
+      <DependentUpon>Kyra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\LokiLaufeyson .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\.Designer.cs">
+      <DependentUpon>LokiLaufeyson .cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Galaxy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Galaxy.Designer.cs">
+      <DependentUpon>Galaxy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\GingerBreadRenegade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\GingerBreadRenegade.Designer.cs">
+      <DependentUpon>GingerBreadRenegade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\LokBot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\LokBot.Designer.cs">
+      <DependentUpon>LokBot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\LtEverGreenToIkonik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\LtEverGreenToIkonik.Designer.cs">
+      <DependentUpon>LtEverGreenToIkonik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\NiteLiteToGhoul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\NiteLiteToGhoul.Designer.cs">
+      <DependentUpon>NiteLiteToGhoul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\OG Skull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\OG Skull.Designer.cs">
+      <DependentUpon>OG Skull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\psychobandit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\psychobandit.Designer.cs">
+      <DependentUpon>psychobandit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\ReconToCursedRen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\ReconToCursedRen.Designer.cs">
+      <DependentUpon>ReconToCursedRen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RedLineToRenegadeRaiderCheckered.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RedLineToRenegadeRaiderCheckered.Designer.cs">
+      <DependentUpon>RedLineToRenegadeRaiderCheckered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\rstoWC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\rstoWC.Designer.cs">
+      <DependentUpon>rstoWC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\SkyeToLoveThorn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\SkyeToLoveThorn.Designer.cs">
+      <DependentUpon>SkyeToLoveThorn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Sparkle Specialist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Sparkle Specialist.Designer.cs">
+      <DependentUpon>Sparkle Specialist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\SummerMidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\SummerMidas.Designer.cs">
+      <DependentUpon>SummerMidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Sunny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Sunny.Designer.cs">
+      <DependentUpon>Sunny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\SurvivalSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\SurvivalSpec.Designer.cs">
+      <DependentUpon>SurvivalSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Thanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\Thanos.Designer.cs">
+      <DependentUpon>Thanos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\WildCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\WildCat.Designer.cs">
+      <DependentUpon>WildCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\WildCatNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\WildCatNormal.Designer.cs">
+      <DependentUpon>WildCatNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\zoey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\zoey.Designer.cs">
+      <DependentUpon>zoey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickAxes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PickAxes.Designer.cs">
+      <DependentUpon>PickAxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenegadeOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenegadeOptions.Designer.cs">
+      <DependentUpon>RenegadeOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI.Designer.cs">
+      <DependentUpon>UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCodes\Codes.cs" />
+    <Compile Include="Nora.Commands\commands.cs" />
+    <Compile Include="Nora.Items.Skins\RenegadeNoHead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RenegadeNoHead.Designer.cs">
+      <DependentUpon>RenegadeNoHead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RenegadeRaider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Items.Skins\RenegadeRaider.Designer.cs">
+      <DependentUpon>RenegadeRaider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Launchers\Launcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Launchers\Launcher.Designer.cs">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nora.Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nora.SearchTool\Researcher.cs" />
+    <Compile Include="Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skins.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Skins.Designer.cs">
+      <DependentUpon>Skins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Swaps\API.cs" />
+    <Compile Include="Swaps\RPC.cs" />
+    <Compile Include="Updater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updater.Designer.cs">
+      <DependentUpon>Updater.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Backblings.resx">
+      <DependentUpon>Backblings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emotes.resx">
+      <DependentUpon>Emotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmoteWarning.resx">
+      <DependentUpon>EmoteWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="News.resx">
+      <DependentUpon>News.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewsF\AnimeSkyTrees.resx">
+      <DependentUpon>AnimeSkyTrees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\blindinglights.resx">
+      <DependentUpon>blindinglights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\buildup.resx">
+      <DependentUpon>buildup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\chickenwingit.resx">
+      <DependentUpon>chickenwingit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\Jitterbug.resx">
+      <DependentUpon>Jitterbug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\My World.resx">
+      <DependentUpon>My World.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\RocketRide.resx">
+      <DependentUpon>RocketRide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\TakeTheL.resx">
+      <DependentUpon>TakeTheL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\vibin.resx">
+      <DependentUpon>vibin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Emotes\Wavy-tToFloss.resx">
+      <DependentUpon>Wavy-tToFloss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\BlackShield.resx">
+      <DependentUpon>BlackShield.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\Crowbar.resx">
+      <DependentUpon>Crowbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\oathandsorrowtodaredevilbillyclub.resx">
+      <DependentUpon>oathandsorrowtodaredevilbillyclub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\OGDefaultPick.resx">
+      <DependentUpon>OGDefaultPick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\raidersrevenge.resx">
+      <DependentUpon>raidersrevenge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\starwand.resx">
+      <DependentUpon>starwand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\Frozen Axe To Galaxy Reaper.resx">
+      <DependentUpon>Frozen Axe To Galaxy Reaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\MintyToCandy.resx">
+      <DependentUpon>MintyToCandy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\streetshine.resx">
+      <DependentUpon>streetshine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Pick\WindowsBite.resx">
+      <DependentUpon>WindowsBite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\DerbyDominator.resx">
+      <DependentUpon>DerbyDominator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Nitrojerry.resx">
+      <DependentUpon>Nitrojerry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\RenegadeRaidr.resx">
+      <DependentUpon>RenegadeRaidr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\AssaultToSparkle.resx">
+      <DependentUpon>AssaultToSparkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Beastboy.resx">
+      <DependentUpon>Beastboy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\BMWC.resx">
+      <DependentUpon>BMWC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Chicken.resx">
+      <DependentUpon>Chicken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Chun-li.resx">
+      <DependentUpon>Chun-li.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\ClarkKent.resx">
+      <DependentUpon>ClarkKent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\ClarkKentV2.resx">
+      <DependentUpon>ClarkKentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\DarkBomberToBirthDayRam.resx">
+      <DependentUpon>DarkBomberToBirthDayRam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\EliteAg.resx">
+      <DependentUpon>EliteAg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\galaxywildcat.resx">
+      <DependentUpon>galaxywildcat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\isabelle.resx">
+      <DependentUpon>isabelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Kyra.resx">
+      <DependentUpon>Kyra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\LokiLaufeyson .resx">
+      <DependentUpon>LokiLaufeyson .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Galaxy.resx">
+      <DependentUpon>Galaxy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\GingerBreadRenegade.resx">
+      <DependentUpon>GingerBreadRenegade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\LokBot.resx">
+      <DependentUpon>LokBot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\LtEverGreenToIkonik.resx">
+      <DependentUpon>LtEverGreenToIkonik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\NiteLiteToGhoul.resx">
+      <DependentUpon>NiteLiteToGhoul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\OG Skull.resx">
+      <DependentUpon>OG Skull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\psychobandit.resx">
+      <DependentUpon>psychobandit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\ReconToCursedRen.resx">
+      <DependentUpon>ReconToCursedRen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\RedLineToRenegadeRaiderCheckered.resx">
+      <DependentUpon>RedLineToRenegadeRaiderCheckered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\rstoWC.resx">
+      <DependentUpon>rstoWC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\SkyeToLoveThorn.resx">
+      <DependentUpon>SkyeToLoveThorn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Sparkle Specialist.resx">
+      <DependentUpon>Sparkle Specialist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\SummerMidas.resx">
+      <DependentUpon>SummerMidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Sunny.resx">
+      <DependentUpon>Sunny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\SurvivalSpec.resx">
+      <DependentUpon>SurvivalSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\Thanos.resx">
+      <DependentUpon>Thanos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\WildCat.resx">
+      <DependentUpon>WildCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\WildCatNormal.resx">
+      <DependentUpon>WildCatNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\zoey.resx">
+      <DependentUpon>zoey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickAxes.resx">
+      <DependentUpon>PickAxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenegadeOptions.resx">
+      <DependentUpon>RenegadeOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI.resx">
+      <DependentUpon>UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\RenegadeNoHead.resx">
+      <DependentUpon>RenegadeNoHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Items.Skins\RenegadeRaider.resx">
+      <DependentUpon>RenegadeRaider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Launchers\Launcher.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nora.Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Skins.resx">
+      <DependentUpon>Skins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updater.resx">
+      <DependentUpon>Updater.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2e60f17765008ff4e6195fda4daa7c08.ico" />
+    <None Include="Resources\82.png" />
+    <None Include="Resources\OIP.jfif" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\R.png" />
+    <None Include="Resources\LOADING.png" />
+    <None Include="Resources\New1.jpeg" />
+    <None Include="Resources\transparent4.png" />
+    <None Include="Resources\transparent %285%291.png" />
+    <None Include="Resources\transparent %286%29.png" />
+    <None Include="Resources\transparent %285%29.png" />
+    <None Include="Resources\transparent %284%29.png" />
+    <None Include="Resources\Gingerbread_Raider_-_Outfit_-_Fortnite.png" />
+    <None Include="Resources\transparent %283%29.png" />
+    <None Include="Resources\Diamond_Diva_-_Outfit_-_Fortnite %281%29.png" />
+    <None Include="Resources\T-Featured-Pickaxes-CandyCanePickaxe.png" />
+    <None Include="Resources\Throwback_Axe_Harvesting_Tool_Icon.png" />
+    <None Include="Resources\uy221x2hlnc41.png" />
+    <None Include="Resources\323211545_large.png" />
+    <None Include="Resources\Snowy_-_Pickaxe_-_Fortnite.png" />
+    <None Include="Resources\transparent %282%291.png" />
+    <None Include="Resources\SkyeIcon.png" />
+    <None Include="Resources\transparent %281%291.png" />
+    <None Include="Resources\Blinding_Lights_-_Emote_-_Fortnite.png" />
+    <None Include="Resources\transparent3.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\Crowbar_-_Pickaxe_-_Fortnite.png" />
+    <None Include="Resources\BoogieDownEmote1.png" />
+    <None Include="Resources\featured.png" />
+    <None Include="Resources\Vibin%27Emote.png" />
+    <None Include="Resources\Diamond_Diva_-_Outfit_-_Fortnite.png" />
+    <None Include="Resources\unknown.png" />
+    <None Include="Resources\transparent2.png" />
+    <None Include="Resources\transparent1.png" />
+    <None Include="Resources\T-Soldier-HID-757-Athena-Commando-F-WildCat-L.png" />
+    <None Include="Resources\BoogieDownEmote.png" />
+    <None Include="Resources\Icon_%2845%29.png" />
+    <None Include="Resources\T-Icon-Emotes-E-Bollywood-L.png" />
+    <None Include="Resources\Say_So_-_Emote_-_Fortnite.png" />
+    <None Include="Resources\Emote28.png" />
+    <None Include="Resources\Beast_Boy_-_Outfit_-_Fortnite.png" />
+    <None Include="Resources\New_Zoey.png" />
+    <None Include="Resources\cooltext387784823886771.png" />
+    <None Include="Resources\cooltext387784763003857.png" />
+    <None Include="Resources\Icon_%2839%29.png" />
+    <None Include="Resources\Lt.-Evergreen-1.png" />
+    <None Include="Resources\wc" />
+    <None Include="Resources\αρχείο λήψης1.jpg" />
+    <None Include="Resources\T-AthenaSoldiers-CID-A-024-Athena-Commando-F-Skirmish-Alt.png" />
+    <None Include="Resources\Raiders_Revenge_-_Pickaxe_-_Fortnite.png" />
+    <None Include="Resources\transparent %282%29.png" />
+    <None Include="Resources\Emote14.png" />
+    <None Include="Resources\wall-stickers-fortnite-floss.jpg" />
+    <None Include="Resources\αρχείο λήψης.png" />
+    <None Include="Resources\fortnite_boogie_down_emote_datamine.png" />
+    <None Include="Resources\transparent %281%29.png" />
+    <None Include="Resources\transparent.png" />
+    <None Include="Resources\ADF611027_large.png" />
+    <None Include="Resources\αρχείο λήψης.jpg" />
+    <None Include="Resources\Shadow_Slicer_-_Harvesting_Tool_-_Fortnite.png" />
+    <None Include="Resources\Dark_Shield.png" />
+    <None Include="Resources\Ruby_Shadows_-_Outfit_-_Fortnite.png" />
+    <None Include="Resources\cooltext387764161242128.png" />
+    <None Include="Resources\output-onlinepngtools %282%29.png" />
+    <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\fortnite-renegade-raider-png-6-Transparent-Images %281%29 %281%29 %281%29 %281%29.png" />
+    <None Include="Resources\fortnite-renegade-raider-png-6-Transparent-Images %281%29 %281%29 %281%29.png" />
+    <None Include="Resources\fortnite-renegade-raider-png-6-Transparent-Images %281%29 %281%29.png" />
+    <None Include="Resources\fortnite-renegade-raider-png-6-Transparent-Images %281%29.png" />
+    <None Include="Resources\output-onlinepngtools.png" />
+    <None Include="Resources\fortnite-renegade-raider-png-6-Transparent-Images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
